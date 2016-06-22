@@ -12,8 +12,6 @@ namespace BinaryTreeTest
 
         static void Main(string[] args)
         {
-            ///Vector<T> a;
-
             // 随机生成高度为 HEIGHT 的二叉树
             var tree = new BinaryTree<int>();
             var root = tree.InsertAsRoot(rand.Next(MIN, MAX));

@@ -15,12 +15,10 @@
         /// 尾部顶点
         /// </summary>
         public IVertex Tail { get; private set; }
-
         /// <summary>
         /// 头部顶点
         /// </summary>
         public IVertex Head { get; private set; }
-
         /// <summary>
         /// 权重
         /// </summary>
@@ -33,24 +31,32 @@
         /// <summary>
         /// 构造函数
         /// </summary>
-        public Edge()
+        /// <param name="tail">尾部顶点</param>
+        /// <param name="head">头部顶点</param>
+        public Edge(IVertex tail, IVertex head)
         {
+            Tail = tail;
+            Head = head;
             Type = EdgeType.UNDETERMINED;
         }
         /// <summary>
         /// 构造函数
         /// </summary>
+        /// <param name="tail">尾部顶点</param>
+        /// <param name="head">头部顶点</param>
         /// <param name="element">边元素</param>
-        public Edge(T element) : this()
+        public Edge(IVertex tail, IVertex head, T element) : this(tail, head)
         {
             Data = element;
         }
         /// <summary>
         /// 构造函数
         /// </summary>
+        /// <param name="tail">尾部顶点</param>
+        /// <param name="head">头部顶点</param>
         /// <param name="element">边元素</param>
         /// <param name="weight">权重</param>
-        public Edge(T element, int weight) : this(element)
+        public Edge(IVertex tail, IVertex head, T element, int weight) : this(tail, head, element)
         {
             Weight = weight;
         }
